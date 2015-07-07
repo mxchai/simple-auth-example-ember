@@ -1,8 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  errorMessage: '',
   actions: {
     registerUser: function() {
+      var self = this;
       console.log('registering user');
       $.ajax({
         headers: {
@@ -21,10 +23,14 @@ export default Ember.Controller.extend({
         },
         success: function(msg) {
           console.log('success!');
+          self.transitionToRoute('login');
         },
         error: function(msg) {
           console.log('failure');
           console.log(msg.responseText);
+          self.set('errorMessage', 'please dont be a pleb');
+          return false;
+          // self.transitionToRoute('login');
         }        
       })      
     }
