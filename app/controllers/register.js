@@ -23,6 +23,8 @@ export default Ember.Controller.extend({
         },
         success: function(msg) {
           console.log('success!');
+          self.set('email', '');
+          self.set('password', '');
           self.transitionToRoute('login');
         },
         error: function(msg) {
