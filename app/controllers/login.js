@@ -1,8 +1,8 @@
 import Ember from 'ember';
-// import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
+import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
 import cowMixin from '../mixins/cow';
 
-export default Ember.Controller.extend(cowMixin, {
+export default Ember.Controller.extend(LoginControllerMixin, cowMixin, {
   authenticator: 'simple-auth-authenticator:devise',
   actions: {
     cow: function() {

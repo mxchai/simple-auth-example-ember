@@ -23,6 +23,11 @@ module.exports = function(environment) {
     authorizer: 'simple-auth-authorizer:devise'
   };
 
+  ENV['simple-auth-devise'] = {
+    serverTokenEndpoint: 'http://localhost:3100/api/auth',
+    tokenAttributeName: 'auth_token'
+  }
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

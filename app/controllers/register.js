@@ -6,13 +6,13 @@ export default Ember.Controller.extend({
     registerUser: function() {
       var self = this;
       console.log('registering user');
-      $.ajax({
+      Ember.$.ajax({
         headers: {
           'X-Transaction': 'POST Example',
-          'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+          'X-CSRF-Token': Ember.$('meta[name="csrf-token"]').attr('content')
         },
         url: 'users',
-        type: "POST",
+        type: 'POST',
         dataType: 'json',
         data: {
           'user': {
@@ -23,6 +23,7 @@ export default Ember.Controller.extend({
         },
         success: function(msg) {
           console.log('success!');
+          console.log(msg.responseText);
           self.set('email', '');
           self.set('password', '');
           self.transitionToRoute('login');
@@ -34,7 +35,7 @@ export default Ember.Controller.extend({
           return false;
           // self.transitionToRoute('login');
         }        
-      })      
+      });
     }
   }
 });
