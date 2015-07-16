@@ -1,7 +1,10 @@
 # Simple-auth-example-ember
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This project is for testing out various Ember related functions, as well as
+keeping a reference for various Ember related patterns.
+
+This repo is mostly used as a testing platform for quick hacks before I 
+fully integrate into flame.
 
 ## Prerequisites
 
